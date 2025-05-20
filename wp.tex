@@ -1,8 +1,17 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
+% Git information
+\usepackage[mark]{gitinfo2}
+
 % moderncv theme
 \moderncvstyle{classic}
 \moderncvcolor{blue}
+
+% set the width of the label column to 4 cm
+\setlength{\hintscolumnwidth}{4cm}
+
+% after changing lengths, recompute dependent lengths
+\recomputecvlengths
 
 % character encoding
 \usepackage[T1]{fontenc}
@@ -15,14 +24,6 @@
 \usepackage[style=numeric]{biblatex}
 \definecolor{brandpurple}{RGB}{104,88,183}
 
-% Custom command for experience entries
-\newcommand{\customcventry}[3]{%
-  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r@{}}
-    #1 & #2 & #3 \\
-  \end{tabular*}%
-  \vspace{0.5em}%
-}
-
 % environment: no booktabs, no colortbl
 \newenvironment{expentry}[3]%  #1=dates, #2=company, #3=title
 {%
@@ -33,12 +34,15 @@
     \textbf{#3} & \href{https://#2}{#2} & \textsc{#1} \\
   \end{tabular*}\par
   {\color{brandpurple}\hrule height 1pt}\vspace{0.8ex}% bottom rule
-  \begin{itemize}[leftmargin=*,nosep]
+  \begin{itemize}[
+    leftmargin=*,
+    nosep,
+    label=-
+  ]
 }
 {%
-  \end{itemize}\vspace{1em}
+  \end{itemize}\vspace{0.138em}
 }
-
 
 % ---- packages ----
 \usepackage{tcolorbox}   % coloured framed boxes
@@ -49,19 +53,25 @@
 % syntax highlighting (optional—remove if you don't embed code)
 \usepackage{minted}
 
+% Define the preprint command that was missing
+\newcommand{\preprint}[1]{{\small\flushleft #1\par}}
+
+% Add CV source code reference
+
 % personal data
 \name{Bohdan}{Snisar}
 \title{Principal Engineer - CTO - AI/ML }
-\address{Milan, Italy}{}{}
+\address{Lisbon, Portugal}{}{}
 \phone[mobile]{+39~351~379~9268}
 \email{bogdan.sns@gmail.com}
 \social[linkedin]{linkedin.com/in/bsnisar}
 \social[github]{bsnisar}
 
-% Add this if you're actually using a bibliography
-% \addbibresource{yourbibfile.bib}
+\extrainfo{\scriptsize CV source: \href{https://github.com/bsnisar/cv}{github.com/bsnisar/cv}}
 
 \begin{document}
+\preprint{\textcolor[rgb]{0.00,0.50,0.75}{{\texttt{Draft \gitAbbrevHash{} by \gitCommitterName{} on \gitCommitterDate}}}}
+
 \makecvtitle
 
 \section{Profile}
@@ -70,38 +80,87 @@ Principal engineer with 13+ years designing and scaling distributed systems, AI/
 \section{Experience}
 
 \begin{expentry}{Feb 2024 -- Present}{Redress}{CTO, Co-Founder}
-  \item Built an AI stylist SaaS that generates outfits in real time; shipped proprietary “Complete the Look” engine.
+  \item Built an AI stylist SaaS that generates outfits in real time; shipped proprietary ``Complete the Look'' engine.
   \item Achieved 44.4\% higher median quality vs. Farfetch baseline in blind tests.
   \item Architected LLM agent orchestration using LangChain LangGraph for dynamic fashion workflow coordination.
 \end{expentry}
 
-\begin{expentry}{May 2024 -- Present}{Partner \& Head of AI}{Overvue Solutions}
+\begin{expentry}{May 2024 -- Present}{Overvue Solutions}{Partner \& Head of AI}
   \item Fractional CTO for enterprise clients; designed LLM-benchmarks for Luxemburg tender call.
-  \item Led architecture reviews, security audits, and GTM for AI consulting arm;
+  \item LLM Agentic Practice delivering fractional-CTO consulting on autonomous documentation, code-understanding, and decision-support agents for enterprise clients.
 \end{expentry}
 
-\customcventry{May 2024 -- Present}{Partner \& Head of AI}{Overvue Solutions}
-\customcventry{Oct 2021 -- Feb 2024}{Senior Software Engineer}{Revolut}
-\customcventry{Jan 2020 -- Oct 2021}{Lead SW Engineer, MLOps}{Wix.com / DeviantArt}
-\customcventry{Jan 2019 -- Jan 2020}{Software Architect}{SoftServe}
-\customcventry{Mar 2022 -- Jul 2023}{Interim CTO}{Confidential (CBDC)}
-\customcventry{Apr 2018 -- Jan 2019}{Lead Software Engineer}{Qvantel}
-\customcventry{May 2017 -- Jan 2018}{Software Engineer}{xtendx AG}
-\customcventry{Jul 2015 -- May 2017}{Senior SW Engineer}{EPAM Systems}
-\customcventry{Jul 2013 -- Jul 2015}{Software Engineer}{SoftServe}
-\customcventry{Jun 2022 -- Apr 2023}{Project Expert (Volunteer)}{Ukrainian Startup Fund}
+\begin{expentry}{Oct 2021 -- Feb 2024}{Revolut}{Senior Software Engineer}
+    \item Owned B2B trading infra managing multi-million EUR portfolios across 4 asset classes.
+    \item Delivered real-time \textbf{market-data platform} (Postgres, Strata, Iceberg) used by Treasury \& Risk as \textbf{single source of truth}.
+    \item Introduced quantitative risk toolkit; cut portfolio-recalc time -70\% and enabled intraday VaR.
+\end{expentry}
+
+\begin{expentry}{Mar 2022 -- Jul 2023}{Confidential Project}{Interim CTO}
+  \item Led architecture design for CBDC prototype presented to the National Bank of Ukraine.
+  \item Developed scalable alternative to DLT for push-based settlement architecture.
+  \item Inspired by Project Hamilton (FED), with focus on real-time performance and resilience.
+\end{expentry}
+
+\begin{expentry}{Jan 2020 -- Oct 2021}{Wix.com \ DeviantArt}{Lead SW Engineer, MLOps}
+  \item Scaled recommendation API to 300k RPM with \textless{}100 ms p95 via \textbf{Vespa} vector search.
+  \item Co-designed hybrid BERT + TF-IDF \textbf{RAG}-like retrieval model, boosting Wix premium subscriptions KPI +7\%.
+  \item Integrated CI/CD pipelines by \textbf{Bazel} intenral extensions into ML-driven microservices, enabling seamless rollout of search infra changes.
+\end{expentry}
+  
+\begin{expentry}{Jan 2019 -- Jan 2020}{Software Architect}{SoftServe}
+  \item Migrated all analytics infra (Airflow, Spark, Druid) from AWS to GCP for Europe's largest GCP customer.
+  \item Closed PoC for a multi-million contract with enterprise client, delivering key analytics solutions.
+  \item Served as GCP Big Data expert in pre-sales and client engagement teams.
+\end{expentry}
+  
+\begin{expentry}{Apr 2018 -- Jan 2019}{Lead Software Engineer}{Qvantel}
+  \item Led team delivering distributed Akka micro-services for Tier-1 European telecom BSS project.
+  \item Mentored 6 engineers, established code conventions and onboarding playbooks.
+\end{expentry}
+
+
+\begin{expentry}{May 2017 -- Jan 2018}{xtendx AG}{Software Engineer}
+  \item Designed and implemented a new statistics subsystem for a corporate video streaming platform.
+  \item Reduced internal traffic load by 2.5--3 Mbps, enabling large-scale analytics aggregation.
+  \item Migrated legacy CI/CD from SVN to Git with GitFlow-based release management.
+\end{expentry}
+
+\begin{expentry}{Jul 2015 -- May 2017}{EPAM Systems}{Senior Software Engineer}
+  \item Built and launched PoS system for Canadian Tire, scaling across 400 offline stores.
+  \item Delivered successful Moneris Gateway integration, enabling certified payment workflows.
+  \item Mentored interns and led two internal lecture streams for junior engineers.
+\end{expentry}
+
+\begin{expentry}{Jul 2013 -- Jul 2015}{SoftServe}{Software Engineer}
+  \item Joined as intern and transitioned to full-time developer in the Data Platform team at Bazaarvoice.
+  \item Completed internal team leadership academy, receiving a job offer prior to graduation.
+\end{expentry}
+
+
+% \begin{expentry}{Jun 2022 -- Apr 2023}{Ukrainian Startup Fund}{Project Expert (Volunteer)}
+%   \item 
+% \end{expentry}
 
 \section{Education}
 \cventry{Sep 2024 -- Dec 2024}{Startup Accelerator}{University College London (UCL)}{}{}{}
 \cventry{2016 -- 2018}{M.S. in Economics}{National Mining University, UA}{}{}{}
 \cventry{2007 -- 2012}{B.S. in Computer Science}{Dnipro Polytechnic, UA}{}{}{}
 
+
 \section{Skills}
-\cvitem{Languages}{Python, Java, Scala, Go, Node.js}
-\cvitem{ML/AI}{PyTorch, ONNX, Jupyter, BERT, Vespa, RAG systems}
-\cvitem{Cloud}{AWS (EC2, Kinesis, SageMaker), GCP (Dataproc, Spark, Druid)}
-\cvitem{Data}{Kafka, Snowpark, Elasticsearch, Airflow, MariaDB}
-\cvitem{Infra}{Kubernetes, Docker, Prometheus, GitHub Actions, Bazel}
-\cvitem{Other}{Distributed Systems, HPC, Event Architecture, Strategy, Leadership}
+\cvitem[0.5em]{Languages}{Python, Java, Scala, Go, Node.js}
+\cvitem[0.5em]{LLM \& Agentic AI}{LangChain, LangGraph, LLM Agents, GraphRAG, AutoML, RLHF, OpenAI APIs}
+\cvitem[0.5em]{ML/AI}{PyTorch, ONNX Runtime, Jupyter, BERT, Vespa, Retrieval-Augmented Generation (RAG)}
+\cvitem[0.5em]{Cloud}{AWS (EC2, Kinesis, SageMaker, DynamoDB), GCP (GKE, Dataproc, BigQuery, Vertex AI, Druid)}
+\cvitem[0.5em]{Data}{Kafka, Snowpark, Spark, Airflow, Elasticsearch, MariaDB, Postgres, ClickHouse}
+\cvitem[0.5em]{Infrastructure}{Kubernetes, Docker, Terraform, Helm, Argo CD, Prometheus, GitHub Actions, Bazel}
+\cvitem{Other}{Distributed Systems, HPC, Event-Driven Architecture, Observability, Strategy, Engineering Leadership}
+
+\section{Public Speaking \& Mentorship}
+\cvitem{2025}{Speaker, ``Advanced React Patterns for Production Systems'' @ Geekle React Global Online Summit}
+\cvitem{2024}{Speaker, ``Agentic Architectures for Enterprise Applications'' @ Conf42 Prompt Engineering}
+\cvitem{2024}{Speaker, ``Scaling ML Infrastructure in Production'' @ Geekle AI in Software}
+\cvitem{2015--2017}{Mentor, Internal developer academy at EPAM Systems; guided 7+ junior engineers}
 
 \end{document}
