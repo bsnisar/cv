@@ -13,6 +13,7 @@
 
 % Add biblatex package
 \usepackage[style=numeric]{biblatex}
+\definecolor{brandpurple}{RGB}{104,88,183}
 
 % Custom command for experience entries
 \newcommand{\customcventry}[3]{%
@@ -22,17 +23,35 @@
   \vspace{0.5em}%
 }
 
-% hyperlinks
-\usepackage{hyperref}
+% environment: no booktabs, no colortbl
+\newenvironment{expentry}[3]%  #1=dates, #2=company, #3=title
+{%
+  \par\noindent
+  {\color{brandpurple}\hrule height 1pt}\vspace{0.6ex}% top rule
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r@{}}
+    \textbf{#3} & \href{https://#2}{#2} & \textsc{#1} \\
+  \end{tabular*}\par
+  {\color{brandpurple}\hrule height 1pt}\vspace{0.8ex}% bottom rule
+  \begin{itemize}[leftmargin=*,nosep]
+}
+{%
+  \end{itemize}\vspace{1em}
+}
+
+
+% ---- packages ----
+\usepackage{tcolorbox}   % coloured framed boxes
+\usepackage{xcolor}      % custom colours
+\usepackage{hyperref}    % clickable links
+\usepackage{enumitem}    % tidy item spacing
 
 % syntax highlighting (optional—remove if you don't embed code)
 \usepackage{minted}
 
-
-
 % personal data
 \name{Bohdan}{Snisar}
-\title{Principal Engineer · CTO · AI/ML Architect}
+\title{Principal Engineer - CTO - AI/ML }
 \address{Milan, Italy}{}{}
 \phone[mobile]{+39~351~379~9268}
 \email{bogdan.sns@gmail.com}
@@ -50,14 +69,13 @@ Principal engineer with 13+ years designing and scaling distributed systems, AI/
 
 \section{Experience}
 
-\customcventry{Feb 2024 -- Present}{Redress}{CTO, Co-Founder}
-\begin{itemize}
+\begin{expentry}{Feb 2024 -- Present}{Redress}{CTO, Co-Founder}
 \item Leading development of an AI-powered clothing recommendation platform for sustainable fashion
 \item Designed computer vision pipeline for garment analysis and attribute extraction
 \item Built cloud-native infrastructure on AWS using containerized microservices
 \item Implemented multi-modal recommender system combining visual features and user preferences
 \item Established MLOps practices with CI/CD, monitoring, and automated model retraining
-\end{itemize}
+\end{expentry}
 
 \customcventry{May 2024 -- Present}{Partner \& Head of AI}{Overvue Solutions}
 \customcventry{Oct 2021 -- Feb 2024}{Senior Software Engineer}{Revolut}
