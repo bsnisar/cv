@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% moderncv theme
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% character encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% page layout
+\usepackage[a4paper,margin=0.75in,includefoot]{geometry}
+
+% Add biblatex package
+\usepackage[style=numeric]{biblatex}
+
+% Custom command for experience entries
+\newcommand{\customcventry}[3]{%
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r@{}}
+    #1 & #2 & #3 \\
+  \end{tabular*}%
+  \vspace{0.5em}%
+}
+
+% hyperlinks
+\usepackage{hyperref}
+
+% syntax highlighting (optional—remove if you don't embed code)
+\usepackage{minted}
+
+
+
+% personal data
+\name{Bohdan}{Snisar}
+\title{Principal Engineer · CTO · AI/ML Architect}
+\address{Milan, Italy}{}{}
+\phone[mobile]{+39~351~379~9268}
+\email{bogdan.sns@gmail.com}
+\social[linkedin]{linkedin.com/in/bsnisar}
+\social[github]{bsnisar}
+
+% Add this if you're actually using a bibliography
+% \addbibresource{yourbibfile.bib}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Principal engineer with 13+ years designing and scaling distributed systems, AI/ML infrastructure, and high-throughput trading platforms. Built trading market-data stacks at Revolut, search \& recommendation engines for 40M+ users at Wix / DeviantArt, and co-founded AI startups in fashion and developer-tools. Adept at turning business goals into resilient, cloud-native solutions and leading cross-functional teams end-to-end.
+
+\section{Experience}
+
+\customcventry{Feb 2024 -- Present}{Redress}{CTO, Co-Founder}
+\begin{itemize}
+\item Leading development of an AI-powered clothing recommendation platform for sustainable fashion
+\item Designed computer vision pipeline for garment analysis and attribute extraction
+\item Built cloud-native infrastructure on AWS using containerized microservices
+\item Implemented multi-modal recommender system combining visual features and user preferences
+\item Established MLOps practices with CI/CD, monitoring, and automated model retraining
+\end{itemize}
+
+\customcventry{May 2024 -- Present}{Partner \& Head of AI}{Overvue Solutions}
+\customcventry{Oct 2021 -- Feb 2024}{Senior Software Engineer}{Revolut}
+\customcventry{Jan 2020 -- Oct 2021}{Lead SW Engineer, MLOps}{Wix.com / DeviantArt}
+\customcventry{Jan 2019 -- Jan 2020}{Software Architect}{SoftServe}
+\customcventry{Mar 2022 -- Jul 2023}{Interim CTO}{Confidential (CBDC)}
+\customcventry{Apr 2018 -- Jan 2019}{Lead Software Engineer}{Qvantel}
+\customcventry{May 2017 -- Jan 2018}{Software Engineer}{xtendx AG}
+\customcventry{Jul 2015 -- May 2017}{Senior SW Engineer}{EPAM Systems}
+\customcventry{Jul 2013 -- Jul 2015}{Software Engineer}{SoftServe}
+\customcventry{Jun 2022 -- Apr 2023}{Project Expert (Volunteer)}{Ukrainian Startup Fund}
+
+\section{Education}
+\cventry{Sep 2024 -- Dec 2024}{Startup Accelerator}{University College London (UCL)}{}{}{}
+\cventry{2016 -- 2018}{M.S. in Economics}{National Mining University, UA}{}{}{}
+\cventry{2007 -- 2012}{B.S. in Computer Science}{Dnipro Polytechnic, UA}{}{}{}
+
+\section{Skills}
+\cvitem{Languages}{Python, Java, Scala, Go, Node.js}
+\cvitem{ML/AI}{PyTorch, ONNX, Jupyter, BERT, Vespa, RAG systems}
+\cvitem{Cloud}{AWS (EC2, Kinesis, SageMaker), GCP (Dataproc, Spark, Druid)}
+\cvitem{Data}{Kafka, Snowpark, Elasticsearch, Airflow, MariaDB}
+\cvitem{Infra}{Kubernetes, Docker, Prometheus, GitHub Actions, Bazel}
+\cvitem{Other}{Distributed Systems, HPC, Event Architecture, Strategy, Leadership}
+
+\end{document}
