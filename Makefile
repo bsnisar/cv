@@ -33,7 +33,7 @@ build: gitinfo
 .PHONY: clean
 clean:
 	@echo "Cleaning up..."
-	rm -f $(TARGET).aux $(TARGET).log $(TARGET).out $(TARGET).toc $(TARGET).pdf 
+	rm -f $(TARGET).aux $(TARGET).log $(TARGET).out $(TARGET).toc $(TARGET).pdf $(TARGET).fls $(TARGET).fdb_latexmk
 
 # Rebuild everything (clean + build)
 .PHONY: rebuild
