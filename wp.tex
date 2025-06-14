@@ -1,179 +1,133 @@
-% Bohdan Snisar – CV (revised)
 \documentclass[11pt,a4paper,sans]{moderncv}
 
-%% ------------------------------------------------------------------
-%% GLOBAL STYLE
-%% ------------------------------------------------------------------
 \moderncvstyle{classic}
 \moderncvcolor{blue}
 \setlength{\hintscolumnwidth}{4cm}
 \recomputecvlengths
 
-%% ------------------------------------------------------------------
-%% ENCODING & GEOMETRY
-%% ------------------------------------------------------------------
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper,margin=0.75in,includefoot]{geometry}
-
-%% ------------------------------------------------------------------
-%% PACKAGES
-%% ------------------------------------------------------------------
-\usepackage{xcolor}
-\usepackage{tcolorbox}
-\usepackage{hyperref}
+\usepackage[a4paper,margin=0.75in]{geometry}
 \usepackage{enumitem}
-\setlist[itemize]{
-  nosep,          % remove vertical space around items
-  topsep=0pt,     % remove extra space above & below the list
-  partopsep=0pt,  % remove separation added when the environment starts a new paragraph
-  parsep=0pt      % no paragraph separation within items
-}
+\usepackage{hyperref}
+\usepackage{tabularx}
 
-%% Remove minted/high-verbosity packages for ATS-safe PDF
-% \usepackage{minted}
-
-%% ------------------------------------------------------------------
-%% CUSTOM ENVIRONMENTS
-%% ------------------------------------------------------------------
-\definecolor{brandpurple}{RGB}{104,88,183}
-
-% experience entry with rules
-\newenvironment{expentry}[3]% #1=dates, #2=company, #3=title
-{\par\noindent
-  {\color{brandpurple}\hrule height 1pt}\vspace{0.4ex}%
-  \noindent
-  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r@{}}
-    \textbf{#3} & \href{https://#2}{#2} & \textsc{#1} \\
-  \end{tabular*}\par
-  {\color{brandpurple}\hrule height 1pt}\vspace{0.5ex}%
-  \begin{itemize}[
-    leftmargin=*,
-    nosep,
-    label=--
-  ]}
-{\end{itemize}\vspace{0.2em}}
-
-%% ------------------------------------------------------------------
-%% PERSONAL DATA
-%% ------------------------------------------------------------------
 \name{Bohdan}{Snisar}
-\title{Principal Engineer -- AI/ML}
+\title{AI Solutions Architect – GenAI, LLM Integration, Partner Enablement}
 \address{Lisbon, Portugal}{}{}
 \phone[mobile]{+39~351~379-9268}
 \email{bogdan.sns@gmail.com}
 \social[linkedin]{linkedin.com/in/bsnisar}
 \social[github]{bsnisar}
 
-%% ------------------------------------------------------------------
 \begin{document}
-
 \makecvtitle
-\vspace{-1.5em}
-% {\scriptsize\color{gray}{CV source: \href{https://github.com/bsnisar/cv}{github.com/bsnisar/cv}}}\par
 
-%% ------------------------------------------------------------------
-%% PROFILE
-%% ------------------------------------------------------------------
 \section{Profile}
-Principal engineer with 13+ years designing and scaling distributed systems, AI/ML infrastructure and high-throughput trading platforms. I translate business goals into resilient, cloud-native solutions and lead cross-functional teams end-to-end. Highlights: built trading market-data stacks at Revolut, search \& recommendation engines for 40 M+ users at Wix/DeviantArt, and co-founded AI start-ups in fashion and developer tooling.
+AI Solutions Architect with 14+ years in tech, blending startup execution with enterprise-scale systems. I build and deploy GenAI platforms that bridge business value with production-grade infra. Led three ventures as a founder (MVP → pilot), built LLM-native tooling, and previously scaled systems at Revolut and Wix. Comfortable owning the full arc from technical discovery and partner enablement to enterprise integration and strategic visioning.
 
-%% ------------------------------------------------------------------
-%% EXPERIENCE
-%% ------------------------------------------------------------------
+\section{Fit for Mistral AI Partner Role}
+\begin{itemize}[noitemsep, topsep=0pt]
+  \item Delivered LLM-native infra (LangGraph, AST, Bazel) across 3 startup ventures
+  \item Led technical discovery & MVP delivery with enterprise partners
+  \item Created onboarding demos and enablement assets for non-technical stakeholders
+  \item 14+ years experience across Revolut, Wix, and multiple GenAI startups
+  \item Bridge between tech, business value, and scalable GenAI adoption
+\end{itemize}
+
 \section{Experience}
 
-\begin{expentry}{May 2024 -- Present}{Prefix Tree}{Partner \& Head of AI (Fractional)}
-  \item Provide fractional-CTO services; designed LLM benchmarking suite for Luxembourg government tender.
-  \item Delivered agentic AI documentation and code-understanding workflows for three enterprise clients.
-  \item \textbf{Tech:} LangChain, OpenAI APIs, Next.js, GCP, Vertex AI
-\end{expentry}
+\cventry{May 2024 -- Present}{Partner \& Head of AI (Fractional)}{Prefix Tree, Lisbon (Remote)}{}{}{
+\begin{itemize}
+  \item Delivered GenAI systems as embedded architect for enterprise clients
+  \item Designed LLM benchmarking suite for Luxembourg government RFP
+  \item Created onboarding materials and agentic workflows for engineering teams
+  \item \textbf{Tech:} LangGraph, OpenAI APIs, Vertex AI, Next.js, Terraform
+\end{itemize}}
 
+\cventry{Feb 2024 -- Feb 2025}{CTO \& Co-Founder}{Redress, Lisbon}{}{}{
+\begin{itemize}
+  \item Launched GenAI fashion styling engine; blind test: +44\% vs Farfetch baseline
+  \item Built outfit generation pipeline using LangGraph + GCP + vector search
+  \item Led partner engagement and pilot onboarding
+  \item \textbf{Tech:} React, Next.js, Python, FastAPI, Weaviate, Terraform, GCP
+\end{itemize}}
 
-\begin{expentry}{Feb 2024 -- Feb 2025}{Redress}{CTO \& Co-Founder}
-  \item Launched AI fashion SaaS "\textit{Complete the Look}” engine, beating Farfetch baseline median quality by \textbf{44\,\%} in blind tests (n = 300).
-  \item Built real-time outfit generation pipeline orchestrated with LangChain LangGraph.
-  \item \textit{Early-stage AI fashion start-up, 3 FTE}.\\[0.2ex]
-  \item \textbf{Tech:} NextJs, React, Python, FastAPI, Weaviate, GCP, Terraform, PyTorch
-\end{expentry}
+\cventry{Oct 2021 -- Feb 2024}{Senior Software Engineer}{Revolut, Remote}{}{}{
+\begin{itemize}
+  \item Owned B2B trading infra and multi-asset market data platform for Treasury/Risk
+  \item Introduced quantitative risk tools with Bloomberg integration
+  \item \textbf{Tech:} Java 17, Kotlin, Postgres, Apache Iceberg, AWS, Kubernetes
+\end{itemize}}
 
-\begin{expentry}{Oct 2021 -- Feb 2024}{Revolut}{Senior Software Engineer}
-  \item Owned B2B trading infrastructure managing multi-million-euro portfolios across four asset classes.
-  \item Delivered real-time \textbf{market-data platform} (Postgres, Strata, Iceberg) used as single source of truth for Treasury \& Risk.
-  \item Introduced quantitative-risk toolkit; reduce intra-day VaR, automatic integration with Bloomberg.
-  \item \textbf{Tech:} Java 17, Kotlin, Postgres, Apache Iceberg, AWS, K8s
-\end{expentry}
-
-\begin{expentry}{Mar 2022 -- Jul 2023}{CBDC Prototype for National Bank of Ukraine}{Interim CTO (Consulting)}
-  \item Architected push-based settlement alternative to DLT, inspired by Project Hamilton (FED).
-  \item Focused on real - time performance and resilience; produced PoC demonstrated to central-bank stakeholders.
+\cventry{Mar 2022 -- Jul 2023}{Interim CTO (Consulting)}{CBDC Prototype, National Bank of Ukraine, Remote}{}{}{
+\begin{itemize}
+  \item Architected real-time push-based settlement system (Project Hamilton-inspired)
+  \item Delivered PoC for central bank, focusing on resilience + throughput
   \item \textbf{Tech:} Go, PostgreSQL, Kafka, GCP, Terraform
-\end{expentry}
+\end{itemize}}
 
-\begin{expentry}{Jan 2020 -- Oct 2021}{Wix.com \& DeviantArt}{Lead Software Engineer -- MLOps}
-  \item Handle recommendation API to 300k RPM with \textless{}100ms p95 based on \textbf{Vespa} vector search.
-  \item Co-designed hybrid BERT + TF-IDF retrieval model, boosting Wix premium-subscription KPI by **7 \%**.
-  \item Integrated Bazel-based CI/CD into ML micro-services for seamless search-infrastructure roll-outs.
+\cventry{Jan 2020 -- Oct 2021}{Lead Software Engineer – MLOps}{Wix.com / DeviantArt, Remote}{}{}{
+\begin{itemize}
+  \item Served 300k RPM via Vespa vector search w/ latency under 100ms
+  \item Hybrid BERT + TF-IDF boosted KPIs 7\%, improved premium conversion
+  \item Integrated Bazel CI/CD for ML pipelines
   \item \textbf{Tech:} Python, Scala, Vespa, Airflow, GKE, BigQuery
-\end{expentry}
+\end{itemize}}
 
-\begin{expentry}{Jan 2019 -- Jan 2020}{SoftServe}{Software Architect}
-  \item Migrated analytics platform (Airflow, Spark, Druid) from AWS to GCP for Europe’s largest GCP customer.
-  \item Closed multi-million-euro PoC by delivering key analytics prototypes for enterprise client.
-  \item Served as GCP Big Data SME in pre-sales and client engagements.
-  \item \textbf{Tech:} Python, Spark, Airflow, Druid, GCP
-\end{expentry}
+\cventry{Jan 2019 -- Jan 2020}{Software Architect}{SoftServe, Remote}{}{}{
+\begin{itemize}
+  \item Migrated Europe’s largest GCP analytics platform (Airflow, Spark, Druid)
+  \item Closed multi-million EUR PoC by building client-facing analytics demos
+  \item \textbf{Tech:} Python, Spark, Druid, GCP, Terraform
+\end{itemize}}
 
-\begin{expentry}{Apr 2018 -- Jan 2019}{Qvantel}{Lead Software Engineer}
-  \item Led team developing distributed Akka micro-services for Tier-1 European telecom BSS project.
-  \item Mentored six engineers; established coding conventions and onboarding playbooks.
-  \item \textbf{Tech:} Scala, Akka, Cassandra, Docker, K8s
-\end{expentry}
+\cventry{Apr 2018 -- Jan 2019}{Lead Software Engineer}{Qvantel, Remote}{}{}{
+\begin{itemize}
+  \item Led Akka-based distributed microservices project for Tier-1 telco
+  \item Mentored 6 engineers and standardized onboarding & code conventions
+  \item \textbf{Tech:} Scala, Akka, Cassandra, Docker, Kubernetes
+\end{itemize}}
 
-\begin{expentry}{May 2017 -- Jan 2018}{xtendx AG}{Software Engineer}
-  \item Designed new statistics subsystem for corporate video-streaming platform; reduced internal traffic by 3 Mbps.
-  \item Migrated legacy CI/CD from SVN to Git adopting GitFlow release management.
-  \item \textbf{Tech:} Java, Spring, MySQL, Git
-\end{expentry}
+\cventry{May 2017 -- Jan 2018}{Software Engineer}{xtendx AG, Remote}{}{}{
+\begin{itemize}
+  \item Rebuilt internal video stats engine; reduced traffic by 3 Mbps
+  \item Migrated legacy CI/CD from SVN to Git with GitFlow strategy
+  \item \textbf{Tech:} Java, Spring, MySQL
+\end{itemize}}
 
-\begin{expentry}{Jul 2015 -- May 2017}{EPAM Systems}{Senior Software Engineer}
-  \item Built and launched PoS system for Canadian Tire across 400 retail stores.
-  \item Integrated Moneris Gateway, enabling certified payment workflows.
-  \item Mentored interns and led two internal lecture tracks for junior developers.
-  \item \textbf{Tech:} Java, Spring, Oracle, Jenkins
-\end{expentry}
+\cventry{Jul 2015 -- May 2017}{Senior Software Engineer}{EPAM Systems, Remote}{}{}{
+\begin{itemize}
+  \item Built POS system for Canadian Tire used across 400+ stores
+  \item Integrated Moneris gateway; delivered certified payment flow
+  \item Mentored interns; led 2 internal lecture series
+  \item \textbf{Tech:} Java, Spring, Oracle
+\end{itemize}}
 
-\begin{expentry}{Jul 2013 -- Jul 2015}{SoftServe}{Software Engineer}
-  \item Started as intern; transitioned to full-time developer in Bazaarvoice Data Platform team.
-  \item Completed internal leadership academy, receiving early full-time offer prior to graduation.
+\cventry{Jul 2013 -- Jul 2015}{Software Engineer}{SoftServe, Ukraine}{}{}{
+\begin{itemize}
+  \item Joined as intern; promoted early to full-time on Bazaarvoice team
+  \item Completed internal leadership academy
   \item \textbf{Tech:} Java, Hadoop, Pig, AWS
-\end{expentry}
+\end{itemize}}
 
-%% ------------------------------------------------------------------
-%% EDUCATION
-%% ------------------------------------------------------------------
 \section{Education}
 \cventry{Sep 2024 -- Dec 2024}{Startup Accelerator}{University College London (UCL)}{}{}{}
-\cventry{2016 -- 2018}{B.S. Computer Science}{Dnipro Polytechnic, UA}{}{}{}
-\cventry{2007 -- 2012}{M.S. Economics}{National Mining University, UA}{}{}{}
+\cventry{2016 -- 2018}{B.S. Computer Science}{Dnipro Polytechnic, Ukraine}{}{}{}
+\cventry{2007 -- 2012}{M.S. Economics}{National Mining University, Ukraine}{}{}{}
 
-%% ------------------------------------------------------------------
-%% SKILLS
-%% ------------------------------------------------------------------
-\section{Skills}
-\cvitem[0.5em]{LLM \& Agentic AI}{LangChain, LangGraph, GraphRAG, LLM Agents, RLHF, OpenAI APIs}
-\cvitem[0.5em]{Languages}{Python, Java 17, Scala, Go, TypeScript}
-\cvitem[0.5em]{ML Frameworks}{PyTorch, ONNX Runtime, Jupyter, Vespa}
-\cvitem[0.5em]{Cloud \& Data}{AWS (EC2, Kinesis, SageMaker, DynamoDB), GCP (GKE, Dataproc, BigQuery, Vertex AI), Kafka, Spark, Airflow, Postgres, ClickHouse}
-\cvitem[0.5em]{Infrastructure}{Kubernetes, Docker, Terraform, Helm, Argo CD, Prometheus, GitHub Actions, Bazel}
-\cvitem{Leadership \& Strategy}{Engineering Management, Hiring, Mentoring, OKRs, Road-mapping}
+\section{Skills Summary}
+\begin{tabularx}{\textwidth}{lX}
+\textbf{GenAI / LLM:} & LangChain, LangGraph, GraphRAG, OpenAI APIs, Llama, Agentic workflows \\
+\textbf{Languages:} & Python, Java, Scala, Go, TypeScript \\
+\textbf{Infra / DevOps:} & GCP, AWS, Terraform, Docker, Kubernetes, Bazel, GitHub Actions \\
+\textbf{ML / Data:} & PyTorch, Vespa, Airflow, Postgres, BigQuery, Spark \\
+\textbf{Partner Enablement:} & Technical discovery, onboarding demos, solution architecture \\
+\end{tabularx}
 
-%% ------------------------------------------------------------------
-%% THOUGHT LEADERSHIP & COMMUNITY
-%% ------------------------------------------------------------------
 \section{Thought Leadership \& Community}
-\cvitem{2025}{Speaker, "Advanced React Patterns for Production Systems” @ Geekle React Global Summit}
-\cvitem{2024}{Speaker, "Agentic Architectures for Enterprise Applications” @ Conf42 Prompt Engineering}
-\cvitem{2015 -- 2017}{Mentor for internal developer academy at EPAM Systems; guided 7+ junior engineers}
+\cvitem{2025}{Speaker, “Advanced React Patterns” @ Geekle React Global Summit}
+\cvitem{2024}{Speaker, “Agentic Architectures” @ Conf42 Prompt Engineering}
+\cvitem{2015--2017}{Mentor, EPAM Internal Academy (7+ junior engineers)}
 
 \end{document}
