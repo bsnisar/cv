@@ -1,5 +1,8 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
+%% ------------------------------------------------------------------
+%% SETTINGS
+%% ------------------------------------------------------------------
 \moderncvstyle{classic}
 \moderncvcolor{blue}
 \setlength{\hintscolumnwidth}{4cm}
@@ -20,12 +23,21 @@
 \social[linkedin]{linkedin.com/in/bsnisar}
 \social[github]{bsnisar}
 
+%% reduce spacing in lists
+\setlist[itemize]{itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt}
+
 \begin{document}
 \makecvtitle
 
+%% ------------------------------------------------------------------
+%% HEADER
+%% ------------------------------------------------------------------
 \section{Profile}
 Founder building AI companies through Prefix Tree venture studio. 14+ years from enterprise scale (Revolut, Wix) to GenAI startups. I write technical proposals, enable partners, and execute full-stack AI solutions. Three ventures running with real skin in the game.
 
+%% ------------------------------------------------------------------
+%% FIT
+%% ------------------------------------------------------------------
 \section{Fit for Mistral AI Partner Role}
 \begin{itemize}[noitemsep, topsep=0pt]
   \item Delivered LLM-native infra (LangGraph, Llama, LLMs) across 3 startup ventures.
@@ -35,13 +47,16 @@ Founder building AI companies through Prefix Tree venture studio. 14+ years from
   \item Doing own startups as founder/co-founder, bridge between tech, business value, and GenAI.
 \end{itemize}
 
+%% ------------------------------------------------------------------
+%% Experience
+%% ------------------------------------------------------------------
 \section{Experience}
 
 \cventry{May 2024 -- Present}{Partner \& Head of AI}{Prefix Tree}{}{}{
 \begin{itemize}
   \item Delivered GenAI systems as embedded architect for enterprise clients.
   \item Designed LLM benchmarking suite for Luxembourg government RFP.
-  \item Bootstrap several ventures, own cash, skin-in-the-game founder mode (NVIDIA Inveption, Google for Sturtups, Gogle AI Accelerator)
+  \item Bootstrap several ventures, own cash, skin-in-the-game founder mode. (NVIDIA Inveption, Google for Sturtups, Google AI Accelerator)
   \item \textbf{Tech:} LangGraph, OpenAI APIs, Vertex AI, Next.js, Terraform, AWS
 \end{itemize}}
 
@@ -114,11 +129,18 @@ Founder building AI companies through Prefix Tree venture studio. 14+ years from
   \item \textbf{Tech:} Java, Hadoop, Pig, AWS
 \end{itemize}}
 
+%% ------------------------------------------------------------------
+%% Education
+%% ------------------------------------------------------------------
 \section{Education}
 \cventry{Sep 2024 -- Dec 2024}{Startup Accelerator}{University College London (UCL)}{}{}{}
 \cventry{2016 -- 2018}{B.S. Computer Science}{Dnipro Polytechnic, Ukraine}{}{}{}
 \cventry{2007 -- 2012}{M.S. Economics}{National Mining University, Ukraine}{}{}{}
 
+
+%% ------------------------------------------------------------------
+%% Skills
+%% ------------------------------------------------------------------
 \section{Skills Summary}
 \begin{tabularx}{\textwidth}{lX}
 \textbf{GenAI / LLM:} & LangChain, LangGraph, GraphRAG, OpenAI APIs, Llama, Agentic workflows \\
