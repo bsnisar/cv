@@ -1,46 +1,54 @@
 name: Build LaTeX document
+
 on:
   push:
     branches:
       - main
+  pull_request:
+
 permissions:
-  id-token: write
-  contents: write      
+  contents: write
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@master
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: wp.tex
-      - name: Set env
+
+      - name: Upload build artifact (for all branches)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-build
+          path: wp.pdf
+
+      - name: Set short SHA (only for main)
         if: github.ref == 'refs/heads/main'
-        run: echo ::set-env name=GITHUB_SHA_SHORT::$(echo $GITHUB_SHA | cut -c 1-6)
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      - name: Create Release
+        run: echo "GITHUB_SHA_SHORT=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      - name: Create GitHub Release (only for main)
         if: github.ref == 'refs/heads/main'
         id: create_release
-        uses: comnoco/create-release-action@v2.0.5            
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.GITHUB_SHA_SHORT }}
-          release_name: Release ${{ env.GITHUB_SHA_SHORT }}
+          name: Release ${{ env.GITHUB_SHA_SHORT }}
           body: Auto-generated release
           draft: false
           prerelease: false
-      - name: Upload Release Asset
-        if: github.ref == 'refs/heads/main'
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Release Asset (only for main)
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./wp.pdf
-          asset_name: cv.pdf
-          asset_content_type: application/pdf
+          files: wp.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
