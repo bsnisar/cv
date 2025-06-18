@@ -1,162 +1,99 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
-
-%% ------------------------------------------------------------------
-%% SETTINGS
-%% ------------------------------------------------------------------
 \moderncvstyle{classic}
 \moderncvcolor{blue}
-\setlength{\hintscolumnwidth}{4cm}
+\setlength{\hintscolumnwidth}{3cm}
 \recomputecvlengths
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage{multicol}
+\usepackage{parskip}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{hyperref}
 
-\name{Bohdan}{Snisar}
-\title{AI Solutions Architect - GenAI, LLM Integration}
+\setlist[itemize]{itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt}
+\titleformat{\section}{\Large\bfseries}{}{0em}{}
+
+\name{Prefix Tree}{Ventures}
+\title{Execution-First AI Venture Studio}
 \address{Lisbon, Portugal}{}{}
-\phone[mobile]{+39~351~379-9268}
 \email{bogdan.sns@gmail.com}
 \social[linkedin]{bsnisar}
 \social[github]{bsnisar}
 
-%% reduce spacing in lists
-\setlist[itemize]{itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt}
-
 \begin{document}
 \makecvtitle
 
-%% ------------------------------------------------------------------
-%% HEADER
-%% ------------------------------------------------------------------
-\section{Profile}
-Founder building AI companies through Prefix Tree venture studio. 14+ years from enterprise scale (Revolut, Wix) to GenAI startups. I write technical proposals, enable partners, and execute full-stack AI solutions. Three ventures running with real skin in the game.
+\vspace{-1em}
 
-%% ------------------------------------------------------------------
-%% FIT
-%% ------------------------------------------------------------------
+\section*{What We Do}
+\vspace{-0.5em}
+\begin{multicols}{2}
 
-%% ------------------------------------------------------------------
-%% Experience
-%% ------------------------------------------------------------------
-\section{Experience}
-
-\cventry{May 2024 -- Present}{Partner \& Head of AI}{Prefix Tree}{}{}{
+\textbf{We build and co-build GenAI ventures with execution speed and system clarity.}
 \begin{itemize}
-  \item Delivered GenAI systems as embedded architect for enterprise clients.
-  \item Designed LLM benchmarking suite for Luxembourg government RFP.
-  \item Bootstrap several ventures, own cash, skin-in-the-game founder mode. (NVIDIA Inveption, Google for Sturtups, Google AI Accelerator)
-  \item \textbf{@see} \href{https://prefixtree.xyz/}{https://prefixtree.xyz/} for more details.
-  \item \textbf{Tech:} LangGraph, OpenAI APIs, Vertex AI, Next.js, Terraform, AWS
-\end{itemize}}
+  \item LLM-native stack: backend, frontend, DevOps, APIs, and UX—AI-assisted
+  \item What works: best-of-breed open-source, lean orchestration
+  \item What doesn't: we’ve dropped LangChain, bloated agents, over-architecture
+\end{itemize}
 
-\cventry{Dec 2024 -- Present}{CTO \& Co-Founder}{0docs}{}{}{
-  \begin{itemize}
-  \item Co-founded 0docs. Mission: to build a self-updating documentation platform that ingests ASTs and continuously regenerates docs directly from source code.
-  \item Architected core analyzers in Python/Rust using Tree-Sitter, Stack-Graphs, enabling language-agnostic parsing at million-line scale.
-  \item Designed concept, code indexing, uses Vendors, Mistal, Llama models for LLMs, with intent to incremental docs refresh.
-  \item \textbf{@see} \href{https://app.0docs.ai}{https://app.0docs.ai} for more details.
-  \item \textbf{Tech:} Typescript, Python, Rust, Tree-Sitter, Stack-Graphs, GitHub Actions, LangGraph, Llama 3, Angular, Terraform, AWS
-  \end{itemize}
-}
+\columnbreak
 
-\cventry{Feb 2024 -- Present}{CTO \& Co-Founder}{Redress}{}{}{
+\section*{How We Build}
+\vspace{-0.5em}
 \begin{itemize}
-  \item Launched GenAI fashion styling engine; pitch competiotion vinner. 
-  \item "Comlete the Look" feature, blind test: +44\% vs Farfetch styling baseline (n = 60)
-  \item Sales with brands like Kooheji (Bahrain), and others.
-  \item \textbf{Tech:} React, Next.js, Python, FastAPI, Weaviate, Terraform, GCP, PyTorch, LangChain, LangGraph
-\end{itemize}}
+  \item MVPs in 4–8 weeks with startup-grade speed
+  \item Infra-grade reliability: composable, scalable, observable code
+  \item LLM used across design, backend, frontend, workflows
+  \item We co-fund, co-build, and operate inside ventures
+  \item Talent from Big Tech + research networks
+\end{itemize}
 
-\cventry{Mar 2022 -- Jul 2023}{Interim CTO (Consulting)}{CBDC Prototype, National Bank of Ukraine, Remote}{}{}{
-\begin{itemize}
-  \item Architected real-time push-based settlement system (Project Hamilton-inspired).
-  \item Delivered PoC for central bank, focusing on resilience + throughput. Pitching on hearing in front of intenral commette.
-  \item \textbf{Tech:} Go, PostgreSQL, Rust, Consensus
-\end{itemize}}
+\end{multicols}
 
-\cventry{Oct 2021 -- Feb 2024}{Revolut}{Senior Software Engineer}{}{}{
-\begin{itemize}
-  \item Owned B2B trading infrastructure managing multi-million-euro portfolios across four asset classes.
-  \item Delivered real-time \textbf{market-data platform} (Postgres, Strata, Iceberg) used as single source of truth for Treasury \& Risk.
-  \item Introduced quantitative-risk toolkit; reduce intra-day VaR, automatic integration with Bloomberg.
-  \item \textbf{Tech:} Java 17, Kotlin, Postgres, Apache Iceberg, AWS, K8s
-\end{itemize}}
+\vspace{0.5em}
 
-\cventry{Jan 2020 -- Oct 2021}{Lead Software Engineer - MLOps}{Wix.com}{}{}{
-\begin{itemize}
-  \item Served 300k RPM via Vespa vector search w/ latency under 100ms, 350m docs index.
-  \item Hybrid BERT + TF-IDF boosted KPIs 7\%, improved premium conversion.
-  \item Integrated Bazel CI/CD into vector serach services. 
-  \item \textbf{Tech:} Python, Scala, Vespa, Airflow, GKE, AWS, Presto
-\end{itemize}}
+\section*{Ventures Built (Last 18 Months)}
 
-\cventry{Jan 2019 -- Jan 2020}{Software Architect}{SoftServe, Remote}{}{}{
-\begin{itemize}
-  \item Migrated Europe's largest GCP analytics platform (Airflow, Spark, Druid), for AWS to GCP for Europe's largest GCP customer.
-  \item Served as GCP Big Data SME in pre-sales and client engagements. As generalist architect in multiple technologies.
-  \item \textbf{Tech:} Python, Spark, Druid, GCP, Terraform, 
-\end{itemize}}
-
-\cventry{Apr 2018 -- Jan 2019}{Lead Software Engineer}{Qvantel, Remote}{}{}{
-\begin{itemize}
-  \item Led Akka-based distributed microservices project for Tier-1 telco.
-  \item Mentored 3 engineers and standardized onboarding \& code conventions.
-  \item \textbf{Tech:} Scala, Akka, Cassandra, Docker, Kubernetes
-\end{itemize}}
-
-\cventry{May 2017 -- Jan 2018}{Software Engineer}{xtendx AG, Remote}{}{}{
-\begin{itemize}
-  \item Rebuilt internal video stats engine; reduced traffic by 3 Mbps.
-  \item Migrated legacy CI/CD from SVN to Git with GitFlow strategy.
-  \item \textbf{Tech:} Java, Spring, MySQL, video streaming protocols, Docker
-\end{itemize}}
-
-\cventry{Jul 2015 -- May 2017}{Senior Software Engineer}{EPAM Systems, Remote}{}{}{
-\begin{itemize}
-  \item Built POS system for Canadian Tire used across 400+ stores.
-  \item Integrated Moneris gateway; delivered certified payment flow.
-  \item Mentored interns; led 2 internal lecture series.
-  \item \textbf{Tech:} Java, Spring, Oracle
-\end{itemize}}
-
-\cventry{Jul 2013 -- Jul 2015}{Software Engineer}{SoftServe, Ukraine}{}{}{
-\begin{itemize}
-  \item Joined as intern; promoted early to full-time on Bazaarvoice team.
-  \item Completed internal academy. Was a lead for internal team.
-  \item \textbf{Tech:} Java, Hadoop, Pig, AWS
-\end{itemize}}
-
-%% ------------------------------------------------------------------
-%% Education
-%% ------------------------------------------------------------------
-\section{Education}
-\cventry{Sep 2024 -- Dec 2024}{Startup Accelerator}{University College London (UCL)}{}{}{}
-\cventry{2016 -- 2018}{B.S. Computer Science}{Dnipro Polytechnic, Ukraine}{}{}{}
-\cventry{2007 -- 2012}{M.S. Economics}{National Mining University, Ukraine}{}{}{}
-
-
-%% ------------------------------------------------------------------
-%% Skills
-%% ------------------------------------------------------------------
-\section{Skills Summary}
-\begin{tabularx}{\textwidth}{lX}
-\textbf{GenAI / LLM:} & LangChain, LangGraph, GraphRAG, OpenAI APIs, Llama, Agentic workflows \\
-\textbf{Languages:} & Python, Java, Scala, Go, TypeScript \\
-\textbf{Infra / DevOps:} & GCP, AWS, Terraform, Docker, Kubernetes, Bazel, GitHub Actions \\
-\textbf{ML / Data:} & PyTorch, Vespa, Airflow, Postgres, BigQuery, Spark \\
-\textbf{Partner Enablement:} & Technical discovery, onboarding demos, solution architecture \\
+\begin{tabularx}{\textwidth}{|l|X|l|l|}
+\hline
+\textbf{Venture} & \textbf{Description} & \textbf{Timeline} & \textbf{Status} \\
+\hline
+Aidala & SaaS for Bitcoin miners (analytics + hedging) & 8 weeks to MVP & Live – \$12K ARR \\
+Redress & AI stylist for e-commerce (chat + video) & 6 weeks to MVP & Pivoting \\
+0docs & Self-updating code docs via AST + LLMs & 4 weeks to MVP & Side project \\
+\hline
 \end{tabularx}
 
-%% ------------------------------------------------------------------
-%% THOUGHT LEADERSHIP & COMMUNITY
-%% ------------------------------------------------------------------
-\section{Thought Leadership \& Community}
-\cvitem{2025}{Mentor as growthmentor.com, helping with tech and mental health. Profile: \href{https://app.growthmentor.com/mentors/bogdan-snisar}{https://app.growthmentor.com/mentors/bogdan-snisar}}
-\cvitem{2025}{Speaker, "Gen Ai in SDLC" @ Geekle React Global Summit}
-\cvitem{2024}{Speaker, "GepAI in Development Processes and Dev Tools" @ Conf42 Prompt Engineering}
+\vspace{1em}
+
+\begin{multicols}{2}
+\section*{Our Edge}
+\vspace{-0.5em}
+\begin{itemize}
+  \item 13+ years in AI, infra, backend, big data
+  \item 2 years deep in GenAI
+  \item 1 exit during studio lifespan
+  \item We operate inside ventures with founder pressure
+  \item Strategic clarity: we know what not to build
+\end{itemize}
+
+\columnbreak
+
+\section*{Partner With Us}
+\vspace{-0.5em}
+\begin{itemize}
+  \item Co-builds with operators and early-stage funds
+  \item Support for corporate venture teams
+  \item Advisory / embedded CTO mode
+  \item Open to talent, feedback, capital, or conversation
+\end{itemize}
+
+\vspace{1em}
+\textbf{Contact:} \href{mailto:bogdan.sns@gmail.com}{bogdan.sns@gmail.com}
+\end{multicols}
 
 \end{document}
