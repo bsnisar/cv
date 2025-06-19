@@ -1,5 +1,6 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
+
 %% ------------------------------------------------------------------
 %% SETTINGS
 %% ------------------------------------------------------------------
@@ -16,32 +17,38 @@
 \usepackage{tabularx}
 
 \name{Bohdan}{Snisar}
-\title{AI Solutions Architect - GenAI, LLM Integration}
+\title{Engineer, Solutions Architect \& Startup CTO - GenAI, LLM Integration}
 \address{Lisbon, Portugal}{}{}
-\phone[mobile]{+39~351~379-9268}
+\phone[mobile]{+351~931~402~316}
 \email{bogdan.sns@gmail.com}
 \social[linkedin]{bsnisar}
 \social[github]{bsnisar}
 
 %% reduce spacing in lists
-\setlist[itemize]{itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt}
+\setlist[itemize]{itemsep=1.4pt, parsep=0pt, topsep=2pt, partopsep=0pt}
 
 \begin{document}
 \makecvtitle
+
+% Define classic web blue color
+\definecolor{webblue}{RGB}{0,102,204}
+% Define custom colored link command - always blue with underline
+\newcommand{\colorhref}[2]{\href{#1}{\textcolor{webblue}{\underline{#2}}}}
+
 
 %% ——————————————————————
 %% HEADER
 %% ——————————————————————
 \section{Profile}
-AI Solutions Architect and Customer Engineer with 14+ years building LLM solutions for enterprise clients and government institutions. Forward deployed engineer experience scaling from enterprise systems (Revolut, Wix) to GenAI startups. Currently building three ventures through Prefix Tree studio with proven customer traction and revenue generation.
+AI Solutions Architect, Senior Engineer with 12+ years building software and LLM solutions. Engineer experience scaling from enterprise systems (GCP sub-contract, Revolut, Wix) to GenAI startups. Currently building consultancy through Prefix Tree studio and several ventures as tech co-funder.
 
 %% ——————————————————————
 %% ANTHROPIC FIT
 %% ——————————————————————
 \section{Anthropic Fit - Applied AI Product Engineer}
 \begin{itemize}
-\item \textbf{Customer Engineering:} Technical advisor, worked for enterprise clients and government institutions, with proven track record of overcoming client skepticism.
-\item \textbf{LLM with startups:} As startup tech co-founder, 2+ years building production GenAI systems using LangChain, LangGraph, and major LLM APIs, with focus on b2b integration and safety considerations
+\item \textbf{Customer Engineering:} Technical advisor, worked for enterprise clients and government institutions.
+\item \textbf{LLM with startups:} As startup tech co-founder, 1.5 years building production GenAI systems using LangChain, LangGraph, and major LLM APIs
 \item \textbf{Cross-functional:} Extensive experience partnering with Sales, Product, and Engineering teams to translate complex technical concepts 
 \item \textbf{Advisory:} Successfully presented to C-level executives and regulatory committees, specializing in solution architecture and customer onboarding for high-stakes implementations
 \end{itemize}
@@ -57,7 +64,7 @@ AI Solutions Architect and Customer Engineer with 14+ years building LLM solutio
         \item Placed Luxembourg government RFP by designing comprehensive LLM benchmarking suite for regulatory evaluation
         \item We founded three ventures during lifespan. Accelerators, participate in NVIDIA Inception, Google for Startups, Google AI Accelerator
         \item \textbf{Tech:} LangGraph, OpenAI APIs, Vertex AI, Next.js, Terraform, AWS
-        \item \textbf{Ref:} \href{https://prefixtree.xyz/}{https://prefixtree.xyz/}
+        \item \textbf{Ref:} \colorhref{https://prefixtree.xyz/}{https://prefixtree.xyz/}
     \end{itemize}
 }
 
@@ -66,7 +73,7 @@ AI Solutions Architect and Customer Engineer with 14+ years building LLM solutio
 \item Co-founded 0docs: self-updating documentation platform that automatically regenerates docs from source code
 \item Architected language-agnostic parsing system supporting million-line codebases using Tree-Sitter and Stack-Graphs
 \item Implemented incremental documentation refresh using Mistral and Llama models, reducing manual documentation overhead by 80%
-\item \textbf{Ref:} \href{https://app.0docs.ai}{https://app.0docs.ai}
+\item \textbf{Ref:} \colorhref{https://app.0docs.ai}{https://app.0docs.ai}
 \item \textbf{Tech:} TypeScript, Python, Rust, Tree-Sitter, LangGraph, Llama 3, Angular, AWS
 \end{itemize}}
 
@@ -144,7 +151,7 @@ AI Solutions Architect and Customer Engineer with 14+ years building LLM solutio
 %% Thought Leadership
 %% ——————————————————————
 \section{Thought Leadership \& Customer Engagement}
-\cvitem{2025}{Technical Advisor at GrowthMentor, helping with technical leadership: \href{https://app.growthmentor.com/mentors/bogdan-snisar}{Profile}}
+\cvitem{2025}{Technical Advisor at GrowthMentor: \colorhref{https://app.growthmentor.com/mentors/bogdan-snisar}{link}}
 \cvitem{2025}{Speaker: "GenAI in SDLC" @ Geekle React Global Summit}
 \cvitem{2024}{Speaker: "GenAI in Development Processes and Dev Tools" @ Conf42 Prompt Engineering}
 
@@ -161,12 +168,12 @@ AI Solutions Architect and Customer Engineer with 14+ years building LLM solutio
 %% ——————————————————————
 \section{Technical Skills}
 \begin{tabularx}{\textwidth}{lX}
-\textbf{GenAI \& LLM:} LangChain, LangGraph, GraphRAG, OpenAI APIs, Llama, Mistral, Agentic workflows, LLM solutions \\
-\textbf{Languages:} Python, Java, Scala, Go, TypeScript, Rust \\
-\textbf{Cloud \& Infrastructure:} AWS, GCP, Terraform, Docker, Kubernetes, GitHub Actions \\
-\textbf{Data \& ML:} PyTorch, Apache Spark, Airflow, PostgreSQL, BigQuery, Vespa \\
-\textbf{Customer Engineering:} Technical discovery, solution architecture, customer onboarding \\
-\textbf{Leadership:} Technical advisory, team mentoring, pre-sales engineering, enterprise customer support
+\textbf{GenAI \& LLM:}    & LangChain, LangGraph, GraphRAG, OpenAI APIs, Llama, Mistral, Agentic workflows, LLM solutions \\
+\textbf{Languages:} & Python, Java, Scala, Go, TypeScript, Rust \\
+\textbf{Cloud \& Infrastructure:} & AWS, GCP, Terraform, Docker, Kubernetes, GitHub Actions \\
+\textbf{Data \& ML:} & PyTorch, Apache Spark, Airflow, PostgreSQL, BigQuery, Vespa \\
+\textbf{Customer Engineering:} & Technical discovery, solution architecture, customer onboarding \\
+\textbf{Leadership:} & Technical advisory, team mentoring, pre-sales engineering, enterprise customer support
 \end{tabularx}
 
 \end{document}
