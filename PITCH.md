@@ -1,73 +1,62 @@
+---
+marp: true
+theme: default
+class: lead
+paginate: true
+---
 
+# 🔷 Bohdan Snisar  
+## CTO & AI Infrastructure Architect
 
+**Blended Experience**  
+Startups × Corporates × Government Systems
 
+---
 
-### ◉ Blended Experience: Startups × Corporates × Government  
+## 🧠 Systems Builder Across Domains
 
-| **Startups**                                                                 | **Corporates**                                                                | **Gov / RFPs**                                                       |
-|------------------------------------------------------------------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| 🚀 **0docs** – Auto-updating LLM docs for codebases                         | 🏦 **Revolut** – B2B trading infra, real-time market data                     | 🇱🇺 **Luxembourg Gov RFP** (via Prefix Tree)                          |
-| 🚀 **Redress** – GenAI stylist engine ("Complete the Look")                 | 📊 **Wix** – Vector search for 350M+ docs, hybrid ranking                     | >> Proposal writing, evaluation design                                |
-| 🚀 **Prefix Tree** – LLM benchmarking for enterprise & public sector        | 🛠 **SoftServe** – Led GCP migration for Europe's largest client             |  |
-| Participated in Google AI Accelerator, NVIDIA Inception, UCL, Launch SF     | 🧠 **EPAM Systems** – Retail POS/payments, team mentoring                     | 🇺🇦 **National Bank of Ukraine** – CBDC system architecture            |
-| Architected 0-to-1 GenAI products, LangChain/Graph workflows, vector search | ⚙ **Qvantel** – Telecom microservices (Scala, Akka)                          | >> Advised on distributed infra for regulatory sandbox                  |
-| Full-stack execution, startup acceleration, GTM pilots                      | Large-scale infra, observability, compliance (PCI DSS, etc.)                |   >> Proposal writing, evaluation design                           |
+| **Startups** | **Corporates** | **Gov / RFPs** |
+|-------------|----------------|----------------|
+| 🚀 **0docs**<br/>LLM-powered auto-documentation from code | 🏦 **Revolut**<br/>B2B trading infra & real-time data systems | 🇱🇺 **Luxembourg RFP** (via Prefix Tree)<br/>LLM benchmark, proposal, integration |
+| 🚀 **Redress**<br/>GenAI stylist engine — 44% better than Farfetch baseline | 📊 **Wix**<br/>Vector search @ 300K RPM, hybrid BERT+TFIDF | 🏛 Tech workshops<br/>Evaluation criteria for AI models |
+| 🚀 **Prefix Tree**<br/>LLM systems design for partners & accelerators | 🛠 **SoftServe**<br/>Migrated Europe’s largest GCP client | 🇺🇦 **National Bank of Ukraine**<br/>CBDC prototype, sandbox approval |
+| 🏁 Accelerators:<br/>Google AI, NVIDIA Inception, UCL, AWS, Launch SF | 🧠 EPAM, Qvantel<br/>Retail POS, telco infra, CI/CD optimization | 🧾 Compliance, architecture, delivery planning |
 
+---
 
-## 💼 Recent Highlights — Startup Execution
+## 📊 Wix — Scaling ML-Powered Search
 
+- Built recommendation & search engine on **Vespa**
+- Served **300K+ RPM** traffic across **350M+ documents**
+- Deployed **hybrid vector + TF-IDF** for best of semantic & lexical search
+- Integrated **RAG pipelines** for content-heavy queries
+- Delivered **7% uplift** in premium plan conversions
+- Fully CI/CD-enabled MLOps — cut deployment time from 2h → 15m
 
+---
 
+## 🏦 Revolut — Trading & Real-Time Data Infra
 
+- Owned **B2B trading infrastructure** — managing multi-million € portfolios
+- Built **real-time market data platform** used by Treasury & Risk
+- Delivered **low-latency event pipelines** for internal decisioning
+- Worked cross-functionally with **Product, Traders, and Risk**
+- Focused on **reliability, correctness, and compliance**
 
-### 🔹 Prefix Tree (2024–Now) — Head of AI / Partner
-Partnering with startups and institutions on applied GenAI strategy and architecture.
-- Led design of LLM benchmarking suite submitted for Luxembourg government RFP
-- Co-authored technical proposal, conducted regulatory workshops, and scoped integrations
-- Drove evaluation design for model robustness, explainability, and deployment feasibility
-- Tech: LangGraph, OpenAI APIs, Terraform, GCP, AWS
+---
 
+## 🚀 Redress & 0docs — 2 pivots - GenAI from Zero to One
 
-### 🔹 0docs (2024–Now, part-time) — CTO & Co-founder
-Bootstrapped a 0-to-1 GenAI devtool solving engineering documentation at scale.
-- Built language-agnostic code parsing system with Tree-Sitter + Stack-Graphs for million-line codebases
-- Developed agent workflow to auto-generate and incrementally refresh docs using LLMs (Azure GPT, Mistral, Llama 3)
-- Delivered fully functional SaaS platform with front-end + back-end, infra on AWS
-- Participated in NVIDIA Inception, Google AI Accelerator, Google for Startups, AWS for startups
-- Tech: Python, TypeScript, Rust, LangChain, Tree-Sitter, Angular, LangGraph, AWS
+**Redress (2024):**  
+- GenAI-powered **fashion styling engine** — beat Farfetch by **44%**
+- Blind tests (n=60) showed clear preference
+- Signed partnership with **Kooheji Group (Bahrain)** — first revenue
+- Stack: React, FastAPI, PyTorch, LangChain, GCP
 
+**0docs (2024–):**  
+- Self-updating documentation platform using **LLMs**
+- Parsed **million-line codebases** using Tree-Sitter + Stack Graphs
+- Reduced manual doc work by **80%** with incremental regeneration
+- Stack: TypeScript, Rust, Llama 3, LangGraph, AWS
 
-
-### 🔹 Redress (2024) — CTO & Co-founder
-Built a GenAI-powered fashion recommendation engine focused on stylist-level capsule creation.
-- Developed “Complete The Look” algorithm, outperforming Farfetch stylist baselines by +44% in blind tests (n=60)
-- Test methodology: users compared looks generated by Redress against Farfetch reference outputs without branding cues
-- Differentiated by combining semantic vector search, style composition logic, and agentic workflows
-- Won startup pitch competition and joined UCL Accelerator, NVIDIA Inception, Google for Startups, and Launch SF Accelerator
-- Tech: React, Next.js, Python, FastAPI, PyTorch, LangChain, LangGraph, Vector Search (Weaviate), GCP
-
-
-## 🏢 Corporate Experience — Scalable Infra & Systems
-
-### 🔹 Revolut (2021–2024) — Senior Software Engineer
-Led engineering work on real-time financial systems for B2B trading.
-	•	Owned backend infrastructure for high-value institutional portfolios (multi-million EUR scale)
-	•	Built real-time market data platform supporting Treasury & Risk operations
-	•	Delivered systems with strong uptime, performance, and cross-team integrations
-	•	Tech: Kotlin, Java 17+, PostgreSQL, Apache Iceberg, AWS, Kubernetes
-
-
-### 🔹 Wix.com (2020–2021) — Lead Software Engineer (MLOps)
-Built search infrastructure powering Wix’s AI-driven content recommendations.
-	•	Scaled vector search engine to 300K+ RPM across 350M+ documents with <100ms latency
-	•	Designed hybrid retrieval with BERT + TF-IDF, increasing premium conversion by 7%
-	•	Migrated build system from Maven to Bazel, enabling full-stack Vespa integration
-	•	Tech: Python, Scala, Vespa, Kubernetes (GKE), Airflow, AWS, Presto
-
-
-### 🔹 Other Roles (2013–2020) — Software & Solutions Engineer
-Delivered core systems for telecom, banking, and enterprise clients across Europe.
-	•	At SoftServe, served as Solutions Architect for Europe’s largest GCP migration
-	•	At EPAM, built POS + payment infra deployed in 400+ retail locations (Canada)
-	•	Earlier roles include Scala-based microservices for Tier-1 telcos, CI/CD infra, and distributed data pipelines
-	•	Tech: Java, Scala, Go, Cassandra, Akka, Spark, Terraform, Oracle, GCP, AWS
+---
