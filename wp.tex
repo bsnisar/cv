@@ -35,6 +35,13 @@
 % Define custom colored link command - always blue with underline
 \newcommand{\colorhref}[2]{\href{#1}{\textcolor{webblue}{\underline{#2}}}}
 
+% Put this in the preamble (before \begin{document})
+\newcommand{\richcventry}[6]{%
+  \cventry{#1}{#2}{#3}{#4}{#5}{}%
+  \vspace{-2mm}%
+  #6%
+}
+
 \textcolor{purple}{\underline{\textbf{Eligible to work in the UK (Ukraine Scheme) - under relocation}}}
 %% ——————————————————————
 %% PROFILE
@@ -57,27 +64,19 @@ CTO and senior engineer with 12+ years working on infrastructure, distributed sy
     \end{itemize}
 }
 
-\cventry{Feb 2024 – Present}{CTO & Co-Founder}{Startup Pivots: Redress → 0docs}{}{}{
-\vspace{-2mm}
-\textit{Two AI-driven ventures exploring GenAI product-market fit, bootstrapped and iterated through B2C and B2B use cases.}
-\vspace{-2mm}
+\cventry{Feb 2024 - Aug 2025}{CTO \& Co-Founder}{Redress \textrightarrow{} 0docs}{}{}{
 \begin{itemize}
-\item \textbf{0docs (Dec 2024 – Present):} Self-updating documentation platform regenerating docs from code
-\begin{itemize}
-\item Architected language-agnostic parsing using Tree-Sitter + Stack-Graphs for million-line codebases
-\item Built Mistral/Llama-based incremental doc refresh, reducing manual work by 80%
-\item \textbf{Tech:} TypeScript, Python, Rust, LangGraph, Llama 3, Angular, AWS
+    \item \textit{AI-native venture exploring GenAI product-market fit, 2 big pivots across B2C and B2B domains.}
+    \vspace{2mm}
+    \item \textbf{0docs:} Designed a language-agnostic parser (Tree-Sitter) to extract architecture from codebases. Ref: {\colorhref{https://app.0docs.ai}{0docs}}
+    \item \textbf{0docs:} Generated context graphs surfacing control flow, abstractions, and interdependencies for architecture-level clarity.
+    \item \textbf{0docs:} \textbf{Tech:} TypeScript, Python, Rust, LangGraph, Llama 3, Angular, AWS.
+    \vspace{2mm}
+    \item \textbf{Redress:} Achieved 44\% better styling match than Farfetch baseline in blind user study (n=60).
+    \item \textbf{Redress:} Piloted with several B2Bs; first revenue.
+    \item \textbf{Redress:} \textbf{Tech:} React, Next.js, Python, FastAPI, Weaviate, PyTorch, LangChain, GCP.
 \end{itemize}
-
-\item \textbf{Redress (Feb 2024 – Dec 2024):} GenAI fashion styling engine
-\begin{itemize}
-\item Improved styling match quality by 44% vs. Farfetch baseline in blind user study (n=60)
-\item Launched in Bahrain with Kooheji Group; generated first revenue
-\item \textbf{Tech:} React, Next.js, Python, FastAPI, Weaviate, PyTorch, LangChain, GCP
-\end{itemize}
-\end{itemize}}
-
-
+}
 
 \cventry{Oct 2021 - Feb 2024}{Senior Software Engineer}{Revolut}{}{}{
 \begin{itemize}
